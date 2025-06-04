@@ -11,18 +11,21 @@ Obsahuje interaktívne GUI na výber datasetu, načítanie obrázkov, segmentác
 Pre správne fungovanie projektu je **nevyhnutné zachovať túto adresárovú štruktúru**, keďže skripty pracujú s pevne očakávanými cestami:
 
 ```
-projekt/
-├── ecc.py
-├── nastroj.py
-├── sam_vit_h_4b8939.pth        # ← sem vlož checkpoint SAM modelu
-├── models/
-│   └── *.joblib                # Trénované modely (napr. lr_scan_control.joblib)
+../puncologicky_nastroj/
 ├── predspracovany dataset skener cruse/
 │   ├── LLa/
 │   └── LRFB/
 ├── predspracovany dataset senzor surfacecontrol3D/
 ├── predspracovany dataset senzor scancontrol/
-└── README.md
+├── subory nastroja/
+│   ├── ecc.py
+│   ├── nastroj.py
+│   ├── sam_vit_h_4b8939.pth        # ← sem vlož checkpoint SAM modelu
+│   ├── lr_lla_cruse.joblib         # Trénované modely
+│   ├── lr_lrfb_cruse.joblib
+│   ├── lr_lla_cruse.joblib
+│   └── lr_lla_cruse.joblib
+└──   
 ```
 
 ---
@@ -35,7 +38,7 @@ Python **3.8 až 3.11**
 ### Inštalácia knižníc cez systémový príkazový riadok:
 
 ```bash
-pip install opencv-python numpy matplotlib torch torchvision joblib
+pip install opencv-python numpy matplotlib torch torchvision joblib segment_anything
 ```
 
 > `tkinter` je vo väčšine prípadov súčasťou Pythona. Ak nie, na Ubuntu alebo v systémovo príkazovom riadku nainštalujte pomocou:
@@ -61,21 +64,9 @@ wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
 
 Uložte do rovnakého priečinka ako `nastroj.py`.
 
-### 2. Inštaluj SAM ako modul
-
-```bash
-git clone https://github.com/facebookresearch/segment-anything.git
-cd segment-anything
-pip install -e .
-```
-
-> Alternatívne sa môže `segment_anything` umiestniť ako lokálny adresár k repozitáru.
-
----
-
 ## Spustenie aplikácie
 
-1. Skontrolujte, že máš stiahnutý checkpoint `sam_vit_h_4b8939.pth`.
+1. Skontrolujte, že máte stiahnutý checkpoint `sam_vit_h_4b8939.pth`.
 2. Pripravte si dataset obrázkov vo formáte `.png` alebo `.tif`.
 3. Spustite aplikáciu:
 
