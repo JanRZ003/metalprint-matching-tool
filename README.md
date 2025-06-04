@@ -76,7 +76,7 @@ python nastroj.py
 
 4. V GUI:
    - Zvoľte typ datasetu (Cruse / senzor),
-   - Vyber dvojicu obrázkov,
+   - Vyberte dvojicu obrázkov,
    - Zvoľte režim segmentácie (jedna / viac masiek),
    - Spustite segmentáciu a analýzu.
 
@@ -106,7 +106,7 @@ Zoznam knižníc použitých v projekte:
 
 ## Videonávod
 
-Súčasťou repozitára je aj videonávod, demonštrujúca spúšťanie a fungovanie puncologického nástroja
+Súčasťou repozitára je aj videonávod, demonštrujúci spúšťanie a fungovanie puncologického nástroja.
 
 ## Autor
 
